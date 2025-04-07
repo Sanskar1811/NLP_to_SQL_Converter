@@ -1,0 +1,8 @@
+natural_language_query,sql_query
+Show all employees,SELECT * FROM employees;
+Employees from Mumbai,SELECT * FROM employees WHERE Emp_City = 'Mumbai';
+Top 3 highest salaries,SELECT * FROM employees ORDER BY Emp_Sal DESC LIMIT 3;
+Top 5 highest salaries,SELECT * FROM employees ORDER BY Emp_Sal DESC LIMIT 5;
+Top salaried employees,SELECT * FROM employees ORDER BY Emp_Sal DESC LIMIT 1;
+
+Employees with salary above 50000,SELECT * FROM employees WHERE Emp_Sal > 50000;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLP to SQL Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Natural Language to SQL Converter</h2>
+        <form method="POST">
+            <input type="text" name="query" placeholder="e.g., Show employees from Mumbai" required>
+            <button type="submit">Run</button>
+        </form>
+
+        {% if sql %}
+            <p><strong>Predicted SQL:</strong> {{ sql }}</p>
+        {% endif %}
+
+        {% if results %}
+            <h3>Results:</h3>
+            <table>
+                {% for row in results %}
+                    <tr>
+                        {% for col in row %}
+                            <td>{{ col }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
